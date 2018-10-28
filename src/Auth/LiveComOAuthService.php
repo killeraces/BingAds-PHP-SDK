@@ -2,19 +2,19 @@
 
 namespace Microsoft\BingAds\Auth;
 
-/** 
+/**
  * Provides method for getting OAuth tokens from the live.com authorization server.
  */
 class LiveComOAuthService extends IOAuthService
 {
-    /** 
+    /**
      * The redirect Uri for a desktop or mobile application.
      */
     const REDIRECTION_URI = array(
         'Production' =>'https://login.live.com/oauth20_desktop.srf',
         'Sandbox' => 'https://login.live-int.com/oauth20_desktop.srf'
     );
-    /** 
+    /**
      * This is the URL used to exchange the authorization token for an
      * access token and a refresh token.
      */
@@ -29,7 +29,7 @@ class LiveComOAuthService extends IOAuthService
         'Production' =>'https://login.live.com/oauth20_authorize.srf?scope=bingads.manage',
         'Sandbox' => 'https://login.live-int.com/oauth20_authorize.srf?scope=bingads.manage&prompt=login'
     );
-    
+
     private $httpService;
 
     public function __construct($httpService) {
@@ -41,8 +41,8 @@ class LiveComOAuthService extends IOAuthService
         }
     }
 
-    
-    /** 
+
+    /**
      * Calls live.com authorization server with the oauthRequestParameters passed in, deserializes the response and returns back OAuth tokens.
      */
     public function GetAccessTokens(OAuthRequestParameters $oauthRequestParameters, $environment)
@@ -59,23 +59,23 @@ class LiveComOAuthService extends IOAuthService
             $accessTokenExchangeParams["client_secret"] = $oauthRequestParameters->ClientSecret;
         }
 
-        /** 
+        /**
          * Create an HTTP client and execute an HTTP POST request to
          * exchange the authorization token for an access token and
          * refresh token.
          */
         $this->httpService = new HttpService();
-    
+
         $responseJson = $this->httpService->post(
             LiveComOAuthService::AUTH_TOKEN_URI[$environment],
             $accessTokenExchangeParams);
 
-        /** 
+        /**
          * The response formatted in json.
          */
         $responseArray = json_decode($responseJson, TRUE);
 
-        /** 
+        /**
          * If the response contains an access_token element, it was successful.
          * If not, an error occurred and the description will be displayed below.
          */
@@ -99,8 +99,8 @@ class LiveComOAuthService extends IOAuthService
                 ->withDescription($errorDesc);
         }
     }
-    
-    /** 
+
+    /**
      * Gets the Microsoft Account authorization endpoint, for example where the user should be navigated to give their consent.
      */
     public static function GetAuthorizationEndpoint(OAuthUrlParameters $parameters, $environment)
@@ -114,7 +114,7 @@ class LiveComOAuthService extends IOAuthService
         ) . (($parameters->State == null) ? "" : ("&state=" . $parameters->State));
     }
 
-    public static function getRedirectUrl($environment) {
+    public function getRedirectUrl($environment) {
         return LiveComOAuthService::REDIRECTION_URI[$environment];
     }
 
