@@ -115,7 +115,11 @@ class LiveComOAuthService extends IOAuthService
     }
 
     public function getRedirectUrl($environment) {
-        return LiveComOAuthService::REDIRECTION_URI[$environment];
+        $redirect_url = array(
+            'Production' =>'https://login.live.com/oauth20_desktop.srf',
+            'Sandbox' => 'https://login.live-int.com/oauth20_desktop.srf'
+        );
+        return $redirect_url[$environment];
     }
 
     public static function getAuthTokenUrl($environment) {
