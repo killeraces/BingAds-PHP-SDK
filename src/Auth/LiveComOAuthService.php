@@ -67,7 +67,7 @@ class LiveComOAuthService extends IOAuthService
         $this->httpService = new HttpService();
 
         $responseJson = $this->httpService->post(
-            LiveComOAuthService::getAuthTokenUrl[$environment],
+            LiveComOAuthService::getAuthTokenUrl($environment),
             $accessTokenExchangeParams);
 
         /**
@@ -107,7 +107,7 @@ class LiveComOAuthService extends IOAuthService
     {
         return sprintf(
             "%s&client_id=%s&response_type=%s&redirect_uri=%s",
-            LiveComOAuthService::getAuthorizeUrl["$environment"],
+            LiveComOAuthService::getAuthorizeUrl("$environment"),
             $parameters->ClientId,
             $parameters->ResponseType,
             $parameters->RedirectUri
