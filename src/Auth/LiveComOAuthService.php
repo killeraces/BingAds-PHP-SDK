@@ -67,7 +67,7 @@ class LiveComOAuthService extends IOAuthService
         $this->httpService = new HttpService();
 
         $responseJson = $this->httpService->post(
-            LiveComOAuthService::AUTH_TOKEN_URI[$environment],
+            LiveComOAuthService::getAuthTokenUrl[$environment],
             $accessTokenExchangeParams);
 
         /**
@@ -107,7 +107,7 @@ class LiveComOAuthService extends IOAuthService
     {
         return sprintf(
             "%s&client_id=%s&response_type=%s&redirect_uri=%s",
-            LiveComOAuthService::AUTHORIZE_URI["$environment"],
+            LiveComOAuthService::getAuthorizeUrl["$environment"],
             $parameters->ClientId,
             $parameters->ResponseType,
             $parameters->RedirectUri
@@ -115,18 +115,26 @@ class LiveComOAuthService extends IOAuthService
     }
 
     public function getRedirectUrl($environment) {
-        $redirect_url = array(
+        $redirection_uri = array(
             'Production' =>'https://login.live.com/oauth20_desktop.srf',
             'Sandbox' => 'https://login.live-int.com/oauth20_desktop.srf'
         );
-        return $redirect_url[$environment];
+        return $redirection_uri[$environment];
     }
 
     public static function getAuthTokenUrl($environment) {
-        return LiveComOAuthService::AUTH_TOKEN_URI[$environment];
+        $auth_token_uri = array(
+            'Production' =>'https://login.live.com/oauth20_token.srf',
+            'Sandbox' => 'https://login.live-int.com/oauth20_token.srf'
+        );
+        return $auth_token_uri[$environment];
     }
 
     public static function getAuthorizeUrl($environment) {
-        return LiveComOAuthService::AUTHORIZE_URI[$environment];
+        $authorize_uri = array(
+            'Production' =>'https://login.live.com/oauth20_authorize.srf?scope=bingads.manage',
+            'Sandbox' => 'https://login.live-int.com/oauth20_authorize.srf?scope=bingads.manage&prompt=login'
+        );
+        return $authorize_uri[$environment];
     }
 }
