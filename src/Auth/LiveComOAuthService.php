@@ -10,25 +10,25 @@ class LiveComOAuthService extends IOAuthService
     /**
      * The redirect Uri for a desktop or mobile application.
      */
-    const REDIRECTION_URI = array(
-        'Production' =>'https://login.live.com/oauth20_desktop.srf',
-        'Sandbox' => 'https://login.live-int.com/oauth20_desktop.srf'
-    );
+    // const REDIRECTION_URI = array(
+    //     'Production' =>'https://login.live.com/oauth20_desktop.srf',
+    //     'Sandbox' => 'https://login.live-int.com/oauth20_desktop.srf'
+    // );
     /**
      * This is the URL used to exchange the authorization token for an
      * access token and a refresh token.
      */
-    const AUTH_TOKEN_URI = array(
-        'Production' =>'https://login.live.com/oauth20_token.srf',
-        'Sandbox' => 'https://login.live-int.com/oauth20_token.srf'
-    );
+    // const AUTH_TOKEN_URI = array(
+    //     'Production' =>'https://login.live.com/oauth20_token.srf',
+    //     'Sandbox' => 'https://login.live-int.com/oauth20_token.srf'
+    // );
     /**
      * Where the user should be navigated to give their consent.
      */
-    const AUTHORIZE_URI = array(
-        'Production' =>'https://login.live.com/oauth20_authorize.srf?scope=bingads.manage',
-        'Sandbox' => 'https://login.live-int.com/oauth20_authorize.srf?scope=bingads.manage&prompt=login'
-    );
+    // const AUTHORIZE_URI = array(
+    //     'Production' =>'https://login.live.com/oauth20_authorize.srf?scope=bingads.manage',
+    //     'Sandbox' => 'https://login.live-int.com/oauth20_authorize.srf?scope=bingads.manage&prompt=login'
+    // );
 
     private $httpService;
 
