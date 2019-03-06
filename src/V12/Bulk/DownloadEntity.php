@@ -18,7 +18,7 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Ad Group records in the download data. */
         const AdGroups = 'AdGroups';
 
-        /** Include App Install Ad, Dynamic Search Ad, Expanded Text Ad, Product Ad, Responsive Ad, and Text Ad records in the download data. */
+        /** Include App Install Ad, Dynamic Search Ad, Expanded Text Ad, Product Ad, Responsive Ad, Responsive Search Ad, and Text Ad records in the download data. */
         const Ads = 'Ads';
 
         /** Include Keyword records in the download data. */
@@ -120,13 +120,13 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Ad Group Sitelink Ad Extension records in the download that each represent the association relationship between an ad group and a sitelink ad extension. */
         const AdGroupSitelinkAdExtensions = 'AdGroupSitelinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const ActionLinkAdExtensions = 'ActionLinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const CampaignActionLinkAdExtensions = 'CampaignActionLinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const AdGroupActionLinkAdExtensions = 'AdGroupActionLinkAdExtensions';
 
         /** Include Structured Snippet Ad Extension records in the download data. */
@@ -210,13 +210,13 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Ad Group Negative In Market Audience Association records in the download that each represent the association relationship between an ad group and an in-market audience exclusion. */
         const AdGroupNegativeInMarketAudienceAssociations = 'AdGroupNegativeInMarketAudienceAssociations';
 
-        /** Include Custom Audience, In Market Audience, Product Audience, and Remarketing List records in the download data. */
+        /** Include Custom Audience, In Market Audience, Product Audience, Remarketing List, and Similar Remarketing List records in the download data. */
         const Audiences = 'Audiences';
 
-        /** Include Ad Group Custom Audience Association, Ad Group In Market Audience Association, Ad Group Product Audience Association, and Ad Group Remarketing List Association records in the download data. */
+        /** Include Ad Group Custom Audience Association, Ad Group In Market Audience Association, Ad Group Product Audience Association, Ad Group Remarketing List Association, and Ad Group Similar Remarketing List Association records in the download data. */
         const AdGroupAudienceAssociations = 'AdGroupAudienceAssociations';
 
-        /** Include Ad Group Negative Custom Audience Association, Ad Group Negative In Market Audience Association, Ad Group Negative Product Audience Association, and Ad Group Negative Remarketing List Association records in the download data. */
+        /** Include Ad Group Negative Custom Audience Association, Ad Group Negative In Market Audience Association, Ad Group Negative Product Audience Association, Ad Group Negative Remarketing List Association, and Ad Group Negative Similar Remarketing List Association records in the download data. */
         const AdGroupNegativeAudienceAssociations = 'AdGroupNegativeAudienceAssociations';
 
         /** Include Product Ad Label records in the download that each represent a label applied to a product ad. */
@@ -252,7 +252,7 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Account Sitelink Ad Extension records in the download that represents the association relationship between an account and a sitelink ad extension. */
         const AccountSitelinkAdExtensions = 'AccountSitelinkAdExtensions';
 
-        /** Reserved for future use. */
+        /** This deprecated value is reserved for internal use and will be removed from a future version of the Bing Ads API. */
         const AccountActionLinkAdExtensions = 'AccountActionLinkAdExtensions';
 
         /** Include Account Structured Snippet Ad Extension records in the download that represents the association relationship between an account and a structured snippet ad extension. */
@@ -282,8 +282,62 @@ namespace Microsoft\BingAds\V12\Bulk;
         /** Include Ad Group Negative Similar Remarketing List Association records in the download that each represent the association relationship between an ad group and a similar remarketing list exclusion. */
         const AdGroupNegativeSimilarRemarketingListAssociations = 'AdGroupNegativeSimilarRemarketingListAssociations';
 
-        /** Reserved. */
+        /** Include Experiment records in the download data. */
         const Experiments = 'Experiments';
+
+        /** Include Action Ad Extension records in the download data. */
+        const ActionAdExtensions = 'ActionAdExtensions';
+
+        /** Include Campaign Action Ad Extension records in the download that represents the association relationship between a campaign and an action ad extension. */
+        const CampaignActionAdExtensions = 'CampaignActionAdExtensions';
+
+        /** Include Ad Group Action Ad Extension records in the download that each represent the association relationship between an ad group and an action ad extension. */
+        const AdGroupActionAdExtensions = 'AdGroupActionAdExtensions';
+
+        /** Include Account Action Ad Extension records in the download that represents the association relationship between an account and an action ad extension. */
+        const AccountActionAdExtensions = 'AccountActionAdExtensions';
+
+        /** Include Responsive Search Ad records in the download data. */
+        const ResponsiveSearchAds = 'ResponsiveSearchAds';
+
+        /** Include Responsive Search Ad Label records in the download that each represent a label applied to a responsive search ad. */
+        const ResponsiveSearchAdLabels = 'ResponsiveSearchAdLabels';
+
+        /** Include Campaign Custom Audience Association, Campaign In Market Audience Association, Campaign Product Audience Association, Campaign Remarketing List Association, and Campaign Similar Remarketing List Association records in the download data. */
+        const CampaignAudienceAssociations = 'CampaignAudienceAssociations';
+
+        /** Include Campaign Negative Custom Audience Association, Campaign Negative In Market Audience Association, Campaign Negative Product Audience Association, Campaign Negative Remarketing List Association, and Campaign Negative Similar Remarketing List Association records in the download data. */
+        const CampaignNegativeAudienceAssociations = 'CampaignNegativeAudienceAssociations';
+
+        /** Include Campaign Custom Audience Association records in the download that each represent the association relationship between a campaign and a custom audience. */
+        const CampaignCustomAudienceAssociations = 'CampaignCustomAudienceAssociations';
+
+        /** Include Campaign Negative Custom Audience Association records in the download that each represent the association relationship between a campaign and a custom audience exclusion. */
+        const CampaignNegativeCustomAudienceAssociations = 'CampaignNegativeCustomAudienceAssociations';
+
+        /** Include Campaign In Market Audience Association records in the download that each represent the association relationship between a campaign and an in-market audience. */
+        const CampaignInMarketAudienceAssociations = 'CampaignInMarketAudienceAssociations';
+
+        /** Include Campaign Negative In Market Audience Association records in the download that each represent the association relationship between a campaign and an in-market audience exclusion. */
+        const CampaignNegativeInMarketAudienceAssociations = 'CampaignNegativeInMarketAudienceAssociations';
+
+        /** Include Campaign Product Audience Association records in the download that each represent the association relationship between a campaign and a product audience. */
+        const CampaignProductAudienceAssociations = 'CampaignProductAudienceAssociations';
+
+        /** Include Campaign Negative Product Audience Association records in the download that each represent the association relationship between a campaign and a product audience exclusion. */
+        const CampaignNegativeProductAudienceAssociations = 'CampaignNegativeProductAudienceAssociations';
+
+        /** Include Campaign Remarketing List Association records in the download that each represent the association relationship between a campaign and a remarketing list. */
+        const CampaignRemarketingListAssociations = 'CampaignRemarketingListAssociations';
+
+        /** Include Campaign Negative Remarketing List Association records in the download that each represent the association relationship between a campaign and a remarketing list exclusion. */
+        const CampaignNegativeRemarketingListAssociations = 'CampaignNegativeRemarketingListAssociations';
+
+        /** Include Campaign Similar Remarketing List Association records in the download that each represent the association relationship between a campaign and a similar remarketing list. */
+        const CampaignSimilarRemarketingListAssociations = 'CampaignSimilarRemarketingListAssociations';
+
+        /** Include Campaign Negative Similar Remarketing List Association records in the download that each represent the association relationship between a campaign and a similar remarketing list exclusion. */
+        const CampaignNegativeSimilarRemarketingListAssociations = 'CampaignNegativeSimilarRemarketingListAssociations';
     }
 
 }

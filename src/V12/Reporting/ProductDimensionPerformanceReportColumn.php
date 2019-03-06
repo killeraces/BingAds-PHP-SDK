@@ -196,6 +196,18 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The unique identifier for the Bing Merchant Center store. */
         const StoreId = 'StoreId';
+
+        /** The number of times an ad that is being co-bid by your manufacturer partners has been displayed on search results pages or other sites on the Bing Network. */
+        const AssistedImpressions = 'AssistedImpressions';
+
+        /** Clicks on your ads that have received co-bids from your manufacturer partners. */
+        const AssistedClicks = 'AssistedClicks';
+
+        /** The percentage of clicks that went to your ads. */
+        const ClickSharePercent = 'ClickSharePercent';
+
+        /** The number of times your ad is shown in the top position as a percentage of the total available impressions in the market you were targeting. */
+        const AbsoluteTopImpressionSharePercent = 'AbsoluteTopImpressionSharePercent';
     }
 
 }

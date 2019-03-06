@@ -139,6 +139,9 @@ namespace Microsoft\BingAds\V12\Reporting;
 
         /** The customer name. */
         const CustomerName = 'CustomerName';
+
+        /** The feed URL will appear either as "True" or "False". */
+        const FeedUrl = 'FeedUrl';
     }
 
 }

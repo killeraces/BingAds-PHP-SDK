@@ -8,6 +8,7 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
      * @link https://docs.microsoft.com/en-us/bingads/campaign-management-service/responsivead?view=bingads-12 ResponsiveAd Data Object
      * 
      * @uses CallToAction
+     * @uses AssetLink
      */
     final class ResponsiveAd extends Ad
     {
@@ -30,13 +31,19 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $Headline;
 
         /**
-         * This is the identifier of the media corresponding to one of two possible aspect ratios for images that could appear in your audience ads.
+         * Because audience ads are responsive, you can create multiple image assets with different sizes and aspect ratios so they can flexibly display across a variety of publishers and placements.
+         * @var AssetLink[]
+         */
+        public $Images;
+
+        /**
+         * The identifier of the image asset used for landscape images with 1.91:1 aspect ratio that could appear in your audience ads.
          * @var integer
          */
         public $LandscapeImageMediaId;
 
         /**
-         * This is the identifier of the media corresponding to one of two possible aspect ratios for logos that could appear in your audience ads.
+         * This element is reserved for internal use, and will be removed from a future version of the Bing Ads API.
          * @var integer
          */
         public $LandscapeLogoMediaId;
@@ -48,13 +55,13 @@ namespace Microsoft\BingAds\V12\CampaignManagement;
         public $LongHeadline;
 
         /**
-         * This is one of two possible aspect ratios for images that could appear in your audience ads.
+         * The identifier of the image asset used for square images with 1:1 aspect ratio that could appear in your audience ads.
          * @var integer
          */
         public $SquareImageMediaId;
 
         /**
-         * This is one of two possible aspect ratios for logos that could appear in your audience ads.
+         * This element is reserved for internal use, and will be removed from a future version of the Bing Ads API.
          * @var integer
          */
         public $SquareLogoMediaId;
